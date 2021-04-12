@@ -1,1 +1,599 @@
-Hello World
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-US">
+
+<head>
+
+	<style data-savepage-href="./files/mp.css" type="text/css" media="all">
+		ul {
+			padding: 0;
+			margin: auto;
+			text-align: justify;
+			width: 50%;
+		}
+
+		ul li {
+			margin: 0px 0px 0.5em 0.5em;
+			padding: 0px
+		}
+
+		table {
+			margin: 1em 0;
+			width: 100%;
+			border: 0;
+		}
+
+		th,
+		td {
+			border: 0;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		#wrap {
+			width: 100%;
+			/*margin:2.5em auto;
+	 margin-top: 100vh;*/
+		}
+
+		#left_col {
+			float: left;
+			width: 0%;
+		}
+
+		#right_col {
+			/*float: right;
+   width:77%;
+	 margin: 100vh auto;*/
+			margin: auto;
+			width: 100%;
+			padding: 1em;
+			/*background-color: #F5F2F2;*/
+			/*background-color: rgba(250,245,245,0.85);*/
+			opacity: 1;
+			min-height: 100%;
+			line-height: 1.5em;
+		}
+
+		#navTop {
+			height: 1.2em;
+			width: 100%;
+			top: 0;
+			left: 0;
+			position: fixed;
+			padding: 0.4em;
+			/* background: #ECE9E9; */
+			background: #FDFAFA;
+			border-bottom: dotted 1pt #666;
+			text-align: center;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			font-family: Romana;
+			font-size: 120%;
+			color: #333;
+			opacity: 0.9;
+			z-index: 0;
+		}
+
+		#footer {
+			height: 1.5em;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			position: fixed;
+			padding: 0.25em;
+			background: #FDFAFA;
+			border-top: dotted 1pt #666;
+			text-align: center;
+			font-size: 120%;
+			font-family: Romana;
+			color: #333;
+			letter-spacing: 0.05em;
+			opacity: 0.9;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			font-family: 'Palatino', didot, optima, "Palatino Linotype";
+			text-transform: uppercase;
+			font-size: 3.25em;
+			font-weight: 300;
+			color: #444;
+			padding: 0.0em 0px 0.5em 0px;
+			letter-spacing: 0.02em;
+		}
+
+		h2 {
+			font-size: 2.25em;
+			color: #993333;
+			margin: 1em 0em 0.4em 0em;
+			line-height: 1.2em;
+			letter-spacing: 0.01em;
+			font-family: 'Palatino', didot, optima, "Palatino Linotype";
+			font-weight: bold;
+		}
+
+		h3 {
+			font-family: "Palatino";
+			font-size: 1.5em;
+			color: #555;
+			margin: 1em 0em 0.4em 0em;
+			line-height: 1.2em;
+			letter-spacing: 0.04em;
+			font-weight: 300;
+		}
+
+		h4 {
+			display: inline;
+			font-family: 'Palatino', didot, optima, "Palatino Linotype";
+			color: #999;
+			font-size: 1em;
+			letter-spacing: 0.025em;
+			font-weight: normal;
+		}
+
+		a {
+			text-decoration: none;
+			border-bottom: 1px dotted #BBB;
+			color: #000000;
+			background-image:
+				/*savepage-url=../files/icons/arrow-r_gray.png*/
+				var(--savepage-url-7);
+			background-size: 14px 14px;
+			background-position: right;
+			background-repeat: no-repeat;
+			padding-right: 18px;
+		}
+
+		/*a:focus {outline:1px #8a887d dotted;}*/
+		a:focus,
+		a:hover {
+			color: #990000;
+			/*#993333;*/
+			background-color: transparent;
+			background-image:
+				/*savepage-url=../files/icons/arrow-r.png*/
+				url();
+			background-size: 14px 14px;
+		}
+
+		a[href$='.pdf'] {
+			background-image:
+				/*savepage-url=../files/pdf_gray.png*/
+				var(--savepage-url-6);
+			background-size: 14px 14px;
+			background-position: right;
+			background-repeat: no-repeat;
+			padding-right: 18px;
+		}
+
+		a[href$='.pdf']:focus,
+		a[href$='.pdf']:hover {
+			background-image:
+				/*savepage-url=../files/pdf.png*/
+				url();
+			background-size: 14px 14px;
+		}
+
+		aa.nav {
+			border-bottom: 0px;
+			background-position: right;
+			background-image:
+				/*savepage-url=../files/link_gray.png*/
+				url();
+			background-size: 14px 14px;
+			background-repeat: no-repeat;
+			padding-right: 18px;
+		}
+
+		aa.nav:hover {
+			color: #993333;
+			cursor: pointer;
+			background-color: transparent;
+			background-image:
+				/*savepage-url=../files/link.png*/
+				url();
+			background-size: 14px 14px;
+		}
+
+		.offset:before {
+			display: block;
+			content: " ";
+			height: 1.5em;
+			/* Give height of your fixed element */
+			margin-top: -1.5em;
+			/* Give negative margin of your fixed element */
+			visibility: hidden;
+		}
+
+		body {
+			font-family: Romana;
+			font-size: 1em;
+			max-width: 900px;
+			margin: 0 auto;
+			color: #000;
+			/* background-color: #ECE9E9; */
+			line-height: 1.5em;
+			hyphens: auto;
+			/* background-image: url("bkg-inv.gif");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: left; */
+			background-repeat: repeat;
+			/* Attempt to work well on cell phones */
+			-webkit-text-size-adjust: none;
+			-ms-text-size-adjust: none;
+			-moz-text-size-adjust: none;
+		}
+
+		p {
+			line-height: 1.5em;
+			margin: 0 0 1em 0;
+			text-align: justify;
+		}
+
+		::selection {
+			background: #a83838;
+			/* WebKit/Blink Browsers */
+			color: #fff;
+		}
+
+		::-moz-selection {
+			background: #a83838;
+			/* Gecko Browsers */
+			color: #fff;
+		}
+
+		@font-face {
+			font-family: 'DIN-Regular';
+			src:
+				/*savepage-url=../files/fonts/din-regular-webfont.woff*/
+				url();
+		}
+
+		@font-face {
+			font-family: 'Romana';
+			src:
+				/*savepage-url=../files/fonts/romana-becker.woff*/
+				url();
+		}
+
+		@font-face {
+			font-family: 'DIN-Light';
+			src:
+				/*savepage-url=../files/fonts/din-light-webfont.woff*/
+				url();
+		}
+
+		@font-face {
+			font-family: 'DIN-Medium';
+			src:
+				/*savepage-url=../files/fonts/din-medium-webfont.woff*/
+				url();
+		}
+
+		@font-face {
+			font-family: 'DIN-Bold';
+			src:
+				/*savepage-url=../files/fonts/din-bold-webfont.woff*/
+				url();
+		}
+
+		/* COMMENTED
+
+@font-face {
+  font-family: 'Nunito';
+  src: /*savepage-url=../files/fonts/Nunito-Regular.ttf*/
+		url();
+		}
+
+		@font-face {
+			font-family: 'OldStandard';
+			src:
+				/*savepage-url=../files/fonts/old-standard/OldStandard-Regular.otf*/
+				url();
+			src:
+				/*savepage-url=../files/fonts/old-standard/OldStandard-Regular.ttf*/
+				url();
+		}
+
+		@font-face {
+			font-family: 'ComingSoon';
+			src:
+				/*savepage-url=../files/fonts/ComingSoon.ttf*/
+				url();
+		}
+
+		*** Old navtable table.navtable {
+			padding: 0;
+			top: 10%;
+			text-align: left;
+			line-height: 1.5em;
+			margin-left: 0%;
+			font-family: DIN-Regular, optima, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			letter-spacing: 0.025em;
+			font-weight: normal;
+			position: fixed;
+			font-size: 105%;
+			width: 12%;
+			word-break: break-all;
+		}
+
+		table.navtable th,
+		td {
+			padding: 0.5em;
+			text-align: left;
+			border-bottom: 0.0em solid #ddd;
+		}
+
+		table.navtable tr:hover {
+			background-color: transparent;
+		}
+
+		*** Old link table a.nav {
+			border-bottom: 0px;
+			color: #993333;
+			font-weight: bold;
+			font-size: 120%;
+		}
+
+		a.nav:hover {
+			color: #a09883;
+		}
+
+		*** Fonts @font-face {
+			font-family: 'Rajdhani';
+			src:
+				/*savepage-url=../files/fonts/Rajdhani-Medium.ttf*/
+				url();
+		}
+
+		@font-face {
+			font-family: 'Romana-Med';
+			src:
+				/*savepage-url=../files/fonts/romana-becker-med.woff*/
+				url();
+		}
+
+		@font-face {
+			font-family: 'Noelan';
+			src:
+				/*savepage-url=../files/fonts/noelan.otf*/
+				url();
+		}
+
+		@font-face {
+			font-family: 'Fabfelt';
+			src:
+				/*savepage-url=../files/fonts/fabfeltscript-bold.woff*/
+				url();
+		}
+
+		@media screen and (min-width: 900px) {
+			table.navtable {
+				font-size: 105%;
+				width: 150px;
+			}
+		}
+
+		@media screen and (min-width: 550px) and (max-width: 900px) {
+			table.navtable {
+				font-size: 100%;
+				width: 110px;
+			}
+		}
+
+		@media screen and (min-width: 200px) and (max-width: 550px) {
+			table.navtable {
+				font-size: 80%;
+				width: 90px;
+			}
+		}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.css	">
+	<script type="text/javascript"
+		data-savepage-src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Ayan Haldar</title>
+
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+	<div id="navTop" class="fadeMenu" style="display:none;">
+		AYAN HALDAR
+	</div>
+	<!--background: linear-gradient(to top, rgba(250,245,245,0), rgba(255,249,249,1));
+	<div style="position:absolute; left:0; top:0; width:100%; height:100%; background-color:#333;">-->
+	<div style="position:absolute; left:0; top:0; width:100%; height:100%;
+	background-color:rgba(102, 106, 211, 0.2);" id="home" class="offset">
+		<h1 style="margin-top:36vh; text-align:center; color:#000;" class="offset">Ayan Haldar</h1>
+		<div style="width:100%; color:#000; text-align:center; font-family: Romana; font-size: 120%; margin-top:2ex;">
+			Postdoctoral Researcher at Department of Engineering <br>
+			<br>
+			Cardiff University<br>
+			Cardiff, UK <br>
+			<div style="margin-top:10vh;">
+				<a style="text-decoration: none;
+				font-size: 17px;
+				position: relative; 
+				top: 2px;" target="_blank" href="./CV-AH.pdf"
+					class="image fit"><i class="ai ai-cv ai-2x"></i></a>
+				<a style="text-decoration: none;
+				font-size: 15px;
+				position: relative;
+				top: 2px;" target="_blank"
+					href="https://scholar.google.com/citations?user=UF6fltEAAAAJ&hl=en"><i
+						class="ai ai-google-scholar ai-2x"></i></a>
+				<a style="text-decoration:none" a="" href="mailto:haldara@cardiff.ac.uk"><i
+						class="fa-paper-plane fa"></i></a>
+
+			</div>
+			<!--<div style="position:absolute; left:0; top:0; width:100%; height:100%; z-index:1; background:url(./files/mit_blur_light.jpg);">-->
+		</div>
+		<div id="wrap" style="margin: 40vh auto 200vh;">
+
+			<ul>
+				<h2 style="margin-top:4vh; text-align:justify; color:#008;" class="offset">About me</h2>
+				<div id="about"
+					style="width:100%; color:#000; text-align:justify; font-family: Palatino Linotype; font-size: 120%; margin-top:2ex;">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td valign="center" width="30%" align="center">
+									<img src="./dp.jpeg" style="width: 90%;" alt="">
+								</td>
+
+								<td valign="top" width="70%">
+									<div
+										style="width:100%; height:100%;color:#000; text-align:justify; font-family: Palatino Linotype; font-size: 120%; margin-top:1ex;">
+										<br>
+										Hello! I am a postdoctoral researcher at <a
+											data-savepage-href="https://www.cardiff.ac.uk/engineering"
+											href="https://www.cardiff.ac.uk/engineering">Cardiff University</a>.
+										My interests are rooted in understanding the mechanics of thin and slender
+										adaptive structures<br>
+										I am passionate about structural mechanics and differential geometry, which I
+										try to study via analytical, numerical, and experimental methods.<br>
+										I have worked and studied at different countries: Spain, Germany, France, UK.
+
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</ul>
+
+
+			<ul>
+				<h2 style="margin-top:5vh; text-align:justify; color:#008;" class="offset">Friends and collaborators
+				</h2>
+				<div
+					style="width:100%; height:48%;color:#000; text-align:justify; font-family: Palatino Linotype; font-size: 110%; margin-top:2ex;">
+
+					<li> <a href="https://www.cardiff.ac.uk/people/view/364368-featherston-carol">Carol Featherston
+						</a>, Cardiff University,
+						UK
+
+					<li> <a href="http://m2do.ucsd.edu/">Alicia Kim</a> UCSD, San Diego, USA 
+
+					<li> <a data-savepage-href="https://mazdias.wordpress.com" href="https://mazdias.wordpress.com/">M.
+							A. Dias</a>, University of Edinburgh, UK
+
+
+
+
+					<li> <a href="https://scholar.google.it/citations?user=uImg5XIAAAAJ&hl=en">Prof. Raimund Rolfes</a>,
+						Leibniz University Hannover, Germany
+
+					<li> <a href="https://www.researchgate.net/profile/Eelco-Jansen">Eelco Jansen</a>, Hogeschool
+						Rotterdam, Netherlands
+
+					<li> <a href="https://sites.google.com/a/uniroma1.it/paolanardinocchi/">Prof. BN Rao</a>,
+						IIT-Madras, India
+
+					<li> <a href="https://www.researchgate.net/profile/Anilkumar-P-M">Anilkumar PM</a>, IIT-Madras,
+						India
+
+					<li> <a href="https://www.iitbbs.ac.in/profile-print.php?furl=kisorsahu">Kisore Sahu</a>,
+						IIT-Bhubaneswar, India
+
+
+					<li> <a href="https://scholar.google.com/citations?user=w6ZvEUwAAAAJ&hl=en">S. Swayamjyoti</a>,
+						IIT-Bhubaneswar, India
+
+					<li> <a href="https://sites.google.com/site/mechanicslabnkj/">Niraj Kr. Jha</a>, Saint Gobain, India
+
+
+					<li> <a href="https://www.iitbbs.ac.in/profile-print.php?furl=kisorsahu">Philippe Le Grognec</a>,
+						ENSTA Bretagne,
+						France
+
+				</div>
+			</ul>
+
+			<ul>
+				<h2 style="margin-top:2em; text-align:justify; color:#008;" class="offset">Publications</h2>
+				<div
+					style="width:100%; height:58%;color:#000; text-align:justify; font-family: Palatino Linotype; font-size: 100%; margin-top:2ex;">
+					<!-- <li> M. Pezzulla, P. Leroy-Calatayud, and P. M. Reis. Fluid-Structure Interactions in Bristled Strips. In preparation.</li> -->
+					<!-- 
+			<li> P. Leroy-Calatayud, M. Pezzulla, A. Keiser, K. Mulleners, and P. M. Reis. Tapering of flexible flappers enhances thrust and efficiency: an experimental investigation. In preparation.</li>
+
+      <li> T. G. Sano, M. Pezzulla, and P. M. Reis. A Kirchhoff-like theory for hard magnetic rods under three-dimensional geometrically nonlinear deformation. In preparation.</li>
+
+      <li> M. Pezzulla, D. Yan, A. Abbasi, and P. M. Reis. A reduced model for non-axisymmetric thin elastic magnetic shells. In preparation.</li>
+
+			<li> B. Shrimali, M. Pezzulla, S. Poincloux, P. M. Reis, and O. Lopez-Pamies. The remarkable bending properties of perforated plates. Submitted.</li>
+
+      <li> D. Yan, M. Pezzulla, L. Cruveiller, A. Abbasi, and P. M. Reis. Magneto-active elastic shells with tunable buckling strength. Accepted, Nat. Commun.</li> -->
+
+					<li> P.M. Anilkumar, A. Haldar, E. Jansen, B.N. Rao, and R. Rolfes.
+						<a href="https://doi.org/10.1016/j.compstruct.2021.113694">Morphing of variable stiffness
+							composite laminates using piezoelectric actuators”. </a>.
+						Composite Structures (2021).
+					</li>
+
+					<li> By R. Berger, B.Hofmeister, M. Bruns, A. Haldar, J. Hafele, B. Hoffmeister, C. Hubler, and R.
+						Rolfes.
+						<a href="https://doi.org/10.1016/j.advengsoft.2020.102959">EngiO – Object-oriented framework for
+							engineering optimization</a>.
+						Advances in Engineering Software, Vol. 153, March 2021, 102959.
+					</li>
+
+					<li> A. Haldar, R.M.J. Groh, E. Jansen, P.M. Weaver, and R. Rolfes.
+						<a href="https://doi.org/10.1016/j.ijsolstr.2020.02.018">An efficient semi-analytical framework
+							to tailor snap-through loads in bistable variable
+							stiffness laminates”.</a>.
+						International Journal of Solids and Structures 195, pp. 91-107 (2020)
+					</li>
+
+					<li>A. Haldar, E. Jansen, B.Hofmeister, M. Bruns, and R. Rolfes.
+						<a href="https://doi.org/10.1115/1.4044816">Analysis of Novel Morphing Trailing Edge Flap
+							Actuated by Multistable Laminates</a>.
+						AIAA Journal, Vol 58, No. 7, July (2020)
+					</li>
+
+					<li> P.M. Anilkumar, A. Haldar, E. Jansen, B.N. Rao, and R. Rolfes.
+						<a href="https://doi.org/10.1080/15376494.2018.1512022">Design optimization of multistable
+							variable-stiffness laminates</a>.
+						Mechanics of Advanced Materials and Structures, Pg. 48-55, August (2018).
+					</li>
+
+					<li> A. Haldar, J. Reinoso, E. Jansen, and R. Rolfes.
+						<a href="https://doi.org/10.1016/j.compstruct.2017.02.014">Thermally induced multistable
+							configurations of variable stiffness composite plates:
+							Semi-analytical and finite element investigation</a>. Composite Structures, Vol. 183, Pg.
+						161-175, January (2018).
+					</li>
+
+					<li> A. Haldar, S. Gopinath, G.S. Palani, and Nagesh R Iyer.
+						<a
+							href="https://www.researchgate.net/profile/Ayan_Haldar/publication/267152610_Effect_of_creep_shrinkage_and_cracking_on_time_dependent_behaviour_of_RC_structures/links/54466ad10cf2d62c304dbc40/Effect-of-creep-shrinkage-and-cracking-on-time-dependent-behaviour-of-RC-structures.pdf">Effect
+							of creep, shrinkage and cracking on time dependent behaviour of RC structures: </a>. Journal
+						of Structural Engineering (JoSE), Vol. 36, pg. 387, (2010).
+					</li>
+
+
+				</div>
+			</ul>
+		</div>
+	</div>
+</body>
+
+</html>
